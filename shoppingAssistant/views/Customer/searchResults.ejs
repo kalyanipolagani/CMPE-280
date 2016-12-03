@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Search Results</title>
+<link rel='stylesheet' href='/stylesheets/search.css' />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+<link rel='stylesheet' href='/stylesheets/owl.carousel.css' />
+<link rel='stylesheet' href='/stylesheets/owl.theme.css' />
+<link rel='stylesheet' href='/stylesheets/animate.css' />
+<link rel='stylesheet' href='/stylesheets/flexslider.css' />
+<link rel='stylesheet' href='/stylesheets/pricing.css' />
+<link rel='stylesheet' href='/stylesheets/main.css' />
+</head>
+<body>
+
+
+
+<!-- Navigator -->
+
+ <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                   	
+			             <div class="panel panel-default">
+				              <h3 id="title">RestoAssistant</h3>
+			             </div>
+		         
+		         </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/about">about us</a></li>
+						<li><a href="/redirectToHomePage">cuisines</a></li>
+                        <li><a href="/addBill">Billing</a></li>
+                        <li><a href="/contact">contact</a></li>
+                        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>SignOut</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+ <br>
+ <br>
+ <br>
+ <br>
+ <form action="/addBill" method="GET">
+ <hgroup class="mb20">
+		        <h1>Search Results</h1>
+		        <h2 class="lead"><strong class="text-danger">Below</strong> results were found for the search for location <strong class="text-danger"><%=location%></strong></h2>								
+	         </hgroup>
+ <section id="pricing" class="pricing">
+ <div id="w">
+
+      <div class="container-fluid">  
+		<div class="row">
+			<div class="col-md-12">
+			<% for(var i in obj.businesses) 
+	                         {                     
+                             %>
+                             
+                             <div class="column">
+    							<div class="col-md-4 ">
+        							<div class="col-md-8 well">
+        							<img src="<%= obj.businesses[i].image_url%> " class="img-responsive" alt="Food" style="width:150px;height:150px" />
+									<div class="row"><Strong>Restaurant : </Strong><%= obj.businesses[i].name%> </div>
+ 									<div class="row"><Strong>Rating : </Strong><%= obj.businesses[i].rating%> </div>
+ 									 <p>
+                              <a href="/addBill" class="btn btn-info btn-lg">
+                             <span class="glyphicon glyphicon-hand-up"></span> I'm Here
+                              </a>
+                             </p>
+                            
+						</div>   
+                    </div>
+                </div>
+			   <%
+			       }
+			           %>	
+				
+			</div>
+			</div>
+			</div>
+			</div>
+           
+            <!-- Search button -->
+			<div align="center">
+				<button type="Submit" class="btn btn-success btn-lg">Search</button>
+				</div> 
+			
+        </section>
+        </form>
+       
+      <br><br><br><br>
+                <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Team Ignous <a href="#">https://shopassis.herokuapp.com/</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+</body>
+</html>
+
+

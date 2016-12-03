@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Customer || Login</title>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+<link rel='stylesheet' href='/stylesheets/owl.carousel.css' />
+<link rel='stylesheet' href='/stylesheets/owl.theme.css' />
+<link rel='stylesheet' href='/stylesheets/animate.css' />
+<link rel='stylesheet' href='/stylesheets/flexslider.css' />
+<link rel='stylesheet' href='/stylesheets/pricing.css' />
+<link rel='stylesheet' href='/stylesheets/main.css' />
+
+	<style type="text/css">
+   input {font-weight:bold;}
+</style>
+
+<script>
+$(document).ready(function() {
+	
+	var status=<%- JSON.stringify(status) %>;
+	console.log("status: "+status);
+	if(status==0){
+		console.log("in here");
+		document.getElementById("error").style.display = 'block';	 
+	}
+	else{
+		document.getElementById("error").style.display = 'none';
+	}
+	
+});
+
+</script>
+</head>
+<body>
+
+ <!-- Navigator -->
+
+ <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  <div class="panel panel-default">
+				              <h3 id="title">RestoAssistant</h3>
+			             </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="/">home</a></li>
+                        <li><a href="/about">about</a></li>
+                        <li><a href="/customerLogin">Login</a></li>
+                        <li><a href="/customerSignup">SignUp</a></li>
+                        <li><a href="/contact">contact</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+        
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+
+	
+		
+		<div class="container-full">
+		
+		<div class="container-fluid" id="loginBox">
+		<div class="row-fluid">
+		<div class="col-md-3"></div>
+			<div class="col-md-6">
+			<div class="span8">
+			<div id="error" style="display: none;"><p>Username/password mismatch</p></div>
+			<form method="post" action="/checkCustLoginDetails">
+			<div class="form-group" >
+						<label for="Email">Email</label> 
+						<input type="Text" class="form-control" id="userid" name="userid" placeholder="Enter Email">
+									
+			</div>
+					
+					<div class="form-group" >
+						<label for="Password">Password</label> 
+						<input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+						
+					</div>
+								
+					<button type="submit" class="btn btn-default"><b>Login</b></button>
+			</form>
+			<br>
+					<a><h4><b>Forgot Password?</b></h4></a>
+				</div></div></div></div>
+				</div>
+		</div>
+		<br><br><br><br>
+		<br><br><br><br>
+		<br><br><br><br><br><br>
+		        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Team Ignous <a href="#">https://shopassis.herokuapp.com/</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

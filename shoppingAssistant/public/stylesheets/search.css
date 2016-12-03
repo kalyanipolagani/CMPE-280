@@ -1,0 +1,11 @@
+body{
+		background-image: url(http://wallpapercave.com/wp/AdQaK85.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+        height:100%;
+	}
+	
+	  .jumbotron {
+     background-size: cover;
+     
+    }

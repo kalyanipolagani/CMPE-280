@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Customer || Login</title>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+<link rel='stylesheet' href='/stylesheets/owl.carousel.css' />
+<link rel='stylesheet' href='/stylesheets/owl.theme.css' />
+<link rel='stylesheet' href='/stylesheets/animate.css' />
+<link rel='stylesheet' href='/stylesheets/flexslider.css' />
+<link rel='stylesheet' href='/stylesheets/pricing.css' />
+<link rel='stylesheet' href='/stylesheets/main.css' />
+
+	<style type="text/css">
+   input {font-weight:bold;}
+</style>
+<script type="text/javascript">
+ function checkPass()
+{
+ 
+    var pass1 = document.getElementById('password');
+    var pass2 = document.getElementById('password2');
+  
+    var message = document.getElementById('confirmMessage');
+
+    if(pass1.value == pass2.value){
+
+        message.innerHTML = "Passwords Match!"
+    }else{
+
+        message.innerHTML = "Passwords Do Not Match!"
+    }
+	
+	 
+} 
+</script>
+</head>
+<body>
+
+ <!-- Navigator -->
+
+ <!--== 4. Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  <div class="panel panel-default">
+				              <h3 id="title">RestoAssistant</h3>
+			             </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/">home</a></li>
+                        <li><a href="/about">about</a></li>
+                        <li><a href="/customerLogin">Login</a></li>
+                        <li><a href="/customerSignup">SignUp</a></li>
+                        <li><a href="/contact">contact</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+        
+        <br><br><br>
+        <br><br><br>
+       
+
+   <div class="container-full">
+	<div class="container-fluid" id="signupbox">
+		<div class="row-fluid">
+		<div class="col-md-3"></div>
+			<div class="col-md-6">
+			<div class="span8">
+					<form action="/postSignUpDetails" method="post">
+					<div class="form-group" >
+						<label for="FisrtName">First Name</label> <input type="Text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+					</div>
+					<div class="form-group" >
+						<label for="LastName">Last Name</label> <input type="Text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+					</div>
+					<div class="form-group" >
+						<label for="email">Email address</label> <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+					</div>
+					<div class="form-group" >
+						<label for="password">Password</label> <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" class="form-control" id="password" name="password" placeholder="Password">
+						 <div id="pwd_strength_wrap">
+                <div id="passwordDescription">Password not entered</div>
+                <div id="passwordStrength" class="strength0"></div>
+                <div id="pswd_info">
+                        <strong>Strong Password Tips:</strong>
+                        <ul>
+                                <li class="invalid" id="length">At least 8 characters</li>
+                                <li class="invalid" id="pnum">At least one number</li>
+                                <li class="invalid" id="capital">At least one lowercase &amp; one uppercase letter</li>
+                                <li class="invalid" id="spchar">At least one special character</li>
+                        </ul>
+                </div><!-- END pswd_info -->
+        </div><!-- END pwd_strength_wrap -->
+					</div>
+					
+					<div class="form-group" >
+						<label for="password2">Verify Password</label> <input onchange="checkPass()" type="password" class="form-control" id="password2" name="verify password" placeholder="Password"><span id="confirmMessage" class="confirmMessage" style="font-weight:bold;"></span>
+					</div>
+					<div class="form-group" >
+						<label for="phone">Phone Number</label> <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+					</div>
+					<button type="submit" class="btn btn-default"><b>Submit</b></button>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<br><br><br><br>
+		
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Team Ignous <a href="#">https://shopassis.herokuapp.com/</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>        
+        <script>
+$("input#password").on("focus keyup", function () {
+        var score = 0;
+        var a = $(this).val();
+        var desc = new Array();
+ 
+        // strength desc
+        desc[0] = "Too short";
+        desc[1] = "Weak";
+        desc[2] = "Good";
+        desc[3] = "Strong";
+        desc[4] = "Best";
+ 
+        $("#pwd_strength_wrap").fadeIn(400);
+         
+        // password length
+        if (a.length >= 8) {
+            $("#length").removeClass("invalid").addClass("valid");
+            score++;
+        } else {
+            $("#length").removeClass("valid").addClass("invalid");
+        }
+ 
+        // at least 1 digit in password
+        if (a.match(/\d/)) {
+            $("#pnum").removeClass("invalid").addClass("valid");
+            score++;
+        } else {
+            $("#pnum").removeClass("valid").addClass("invalid");
+        }
+ 
+        // at least 1 capital & lower letter in password
+        if (a.match(/[A-Z]/) && a.match(/[a-z]/)) {
+            $("#capital").removeClass("invalid").addClass("valid");
+            score++;
+        } else {
+            $("#capital").removeClass("valid").addClass("invalid");
+        }
+ 
+        // at least 1 special character in password {
+        if ( a.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) {
+                $("#spchar").removeClass("invalid").addClass("valid");
+                score++;
+        } else {
+                $("#spchar").removeClass("valid").addClass("invalid");
+        }
+ 
+ 
+        if(a.length > 0) {
+                //show strength text
+                $("#passwordDescription").text(desc[score]);
+                // show indicator
+                $("#passwordStrength").removeClass().addClass("strength"+score);
+        } else {
+                $("#passwordDescription").text("Password not entered");
+                $("#passwordStrength").removeClass().addClass("strength"+score);
+        }
+});
+ 
+$("input#pwd").blur(function () {
+        $("#pwd_strength_wrap").fadeOut(400);
+});
+</script>
+</body>
+</html>

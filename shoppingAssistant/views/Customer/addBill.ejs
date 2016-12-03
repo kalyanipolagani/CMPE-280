@@ -1,0 +1,131 @@
+  <!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<title>Bill</title>
+<link rel='stylesheet' href='/stylesheets/bill.css' />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel='stylesheet' href='/stylesheets/font-awesome.min.css' />
+<link rel='stylesheet' href='/stylesheets/owl.carousel.css' />
+<link rel='stylesheet' href='/stylesheets/owl.theme.css' />
+<link rel='stylesheet' href='/stylesheets/animate.css' />
+<link rel='stylesheet' href='/stylesheets/flexslider.css' />
+<link rel='stylesheet' href='/stylesheets/pricing.css' />
+<link rel='stylesheet' href='/stylesheets/main.css' />
+
+</head>
+<body>
+
+ <!--== Navigation ==-->
+        <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="panel panel-default">
+				              <h3 id="title">RestoAssistant</h3>
+			             </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="Food-fair-toggle">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/about">about us</a></li>
+                        <li><a href="/redirectToHomePage">cuisines</a></li>
+                        <li><a href="/addBill">Billing</a></li>
+                        <li><a href="/contact">contact</a></li>
+                        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>SignOut</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.row -->
+        </nav>
+<br>
+<br>
+<br>
+<br>
+
+	<div class="container">
+		
+			
+			<div align="center">
+				<h2><b>Add Bill<b></h2>
+					<div class="container-fluid" id="signupbox">
+		<div class="row-fluid">
+		<div class="col-md-3"></div>
+			<div class="col-md-6">
+			<div class="span8">
+					<form action="/postBillDetails" method="get" enctype="multipart/form-data">
+ <input class="form-control" id="restaurentChoice" value='<%= abc %>' name="restaurentChoice" type="hidden">
+					<div class="form-group" >
+					<input type="file" name="sampleFile" accept="image/*">
+					</div>
+					<br>
+					<div class="form-group" >
+						<label for="Bill Number"><h4><b>Bill Number<b></h4></label> <input type="Text"
+							class="form-control" id="billNum" name="billNum" placeholder="Bill Number">
+					</div>
+					<div class="form-group" >
+						<label for="Total"><h4><b>Amount<b></h4></label> <input type="Text"
+							class="form-control" id="totalCost" name="totalCost" placeholder="Amount">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+			</div>
+			
+		
+	</div>
+<br><br><br><br>
+		<br><br><br><br>
+		<br><br><br><br><br><br>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Team Ignous <a href="#">https://shopassis.herokuapp.com/</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js" ></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+        <script type="text/javascript" src="js/jQuery.scrollSpeed.js"></script>
+        <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+     google.charts.load('current', {packages: ['corechart']});     
+   </script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Add Bill</title>
+<style>
+meter { -webkit-appearance: none; } //Crucial, this will disable the default styling in Webkit browsers
+
+meter::-webkit-meter-bar {
+    background: #FFF;
+    border: 1px solid #CCC;
+}
+
+meter::-webkit-meter-optimum-value {
+    background: #87C7DE;
+    background: -moz-linear-gradient(top, #a1d4e6 0%, #6bb4d1 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a1d4e6), color-stop(100%, #6bb4d1));
+    background: -webkit-linear-gradient(top, #a1d4e6 0%, #6bb4d1 100%);
+    background: -o-linear-gradient(top, #a1d4e6 0%, #6bb4d1 100%);
+    background: -ms-linear-gradient(top, #a1d4e6 0%, #6bb4d1 100%);
+    background: linear-gradient(to bottom, #a1d4e6 0%, #6bb4d1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a1d4e6', endColorstr='#6bb4d1',GradientType=0);
+}
+</style>
+<script>
+function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+        }
+function drawChart() {
+   // Define the chart to be drawn.
+   var data = new google.visualization.DataTable();
+   data.addColumn('string', 'Points');
+   data.addColumn('number', 'Percentage');
+   /* (10000-<%=myPoints%>) */
+   var remainingPoints=(10000-<%=myPoints%>);
+   if((<%=myPoints%>)>=10000){
+   	remainingPoints=remainingPoints+1000;
+   }
+  	console.log("points remaining"+remainingPoints);
+   data.addRows([
+      ['My Points', <%=myPoints%>],
+      ['Required More', remainingPoints],
+   ]);
+   
+   // Set chart options
+   var options = {'title':'Your points',
+      'width':550,
+      'height':400,
+       pieHole: 0.4
+   };
+
+   // Instantiate and draw the chart.
+   var chart = new google.visualization.PieChart(document.getElementById('container'));
+   chart.draw(data, options);
+}
+google.charts.setOnLoadCallback(drawChart);
+</script>
+</head>
+<body>
+
+	<!-- Navigator -->
+<div id="top-navbar" class="navbar navbar-default navbar-top">
+			<div class="container">
+				<ul class="nav navbar-nav">
+				
+					<li class="active"><a href="#">Home</a></li>
+					<li><a  href="/">Account</a></li>
+					<li><a  href="/">Abc</a></li>
+					<li><a  href="/">Def</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-search"
+							aria-hidden="true"></span></a></li>
+				</ul>
+							<ul class="nav navbar-nav navbar-right">
+      				<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    						</ul>
+				
+				
+			</div>
+		</div>
+	<!-- Container -->
+	<div class="container">
+		
+			
+			<div align="center">
+				<h1>My Points</h1>
+					<div class="container-fluid" id="signupbox">
+		<div class="row-fluid">
+		<div class="col-md-3"></div>
+			<div class="col-md-6">
+			<div class="span8">
+			<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+					<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
+<input type="text" id="textInput" value="">
+					<form action="/redeemPoints" method="get">
+					
+						<div class="meter">
+    <span style="width: 25%"></span>
+</div>
+						 
+					<button type="submit" class="btn btn-default">Redeem Points</button>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+			</div>
+			
+		
+	</div>
+
+</body>
+</html>
+
+
